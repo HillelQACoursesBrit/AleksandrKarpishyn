@@ -35,7 +35,7 @@ public class HomePageTest extends BaseTestClass {
 
 
     }
-    //тест 2
+    //тест 1
     @Test (priority = 2)
     public void CheckCountOfArrivals () throws InterruptedException {
         homePage.clickOnShop();
