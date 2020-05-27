@@ -20,10 +20,19 @@ public class HomePage {
     @FindBy(xpath = "//*[@class = 'row_inner']")
     List<WebElement> arrivals;
 
+
+    @FindBy(linkText ="My Account")
+    WebElement myAccount;
+
 public HomePage clickOnShop(){
     shop.click();
     return this;
 }
+    public HomePage clickOnMyAccount(){
+        myAccount.click();
+        return this;
+    }
+
 
     public int getCountOfSliders()
     {
