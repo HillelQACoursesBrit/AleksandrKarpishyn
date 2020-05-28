@@ -18,11 +18,38 @@ public class HomePage {
     List<WebElement> slider;
 
     @FindBy(xpath = "//*[@class = 'row_inner']")
-    List<WebElement> arrivals;
+    List<WebElement> arrival;
 
 
     @FindBy(linkText ="My Account")
     WebElement myAccount;
+
+    //------ попытка через другой xpath
+    @FindBy (xpath = "//*[@class='products']")
+    List<WebElement> arrivals;
+    @FindBy (xpath = "//*[@class = 'attachment-shop_catalog size-shop_catalog wp-post-image']")
+    List<WebElement> imageArrivals;
+
+    public int countOfArrivals(){
+        return arrivals.size();
+    }
+
+    public WebElement numberOfArrivals(int number){
+        WebElement numberA = null;
+        for ( int i = number - 1; i < imageArrivals.size(); i++){
+            numberA = imageArrivals.get(i);
+            break;
+        }
+        return numberA;
+    }
+
+    public Arrivals goToArrivals(WebElement webElement){
+        webElement.click();
+        return new Arrivals();
+    }
+    //-------коенц попытки
+
+
 
 public HomePage clickOnShop(){
     shop.click();
@@ -40,7 +67,7 @@ public HomePage clickOnShop(){
     }
     public int getCountOfArrivals()
     {
-        return arrivals.size();
+        return arrival.size();
     }
 
     public HomePage(){
